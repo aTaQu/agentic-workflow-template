@@ -1,0 +1,9 @@
+# Worktrees created by the parallel orchestrator
+.worktrees/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
