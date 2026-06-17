@@ -64,3 +64,27 @@ Plans declare parallel-safe groups as `### Wave N (parallel)` subsections with a
 - **Stay in scope.** Touch only what the task declares. Surface unrelated issues; don't fix them inline.
 - **Context budget.** When a session fills up, `/handoff` to compact it for a fresh session.
 - **Security.** No secrets in code or fixtures. No raw user input in queries. CSRF/auth on state-changing operations.
+
+## Working principles
+
+Behavioral discipline for every task — adapted from Andrej Karpathy's coding guidelines
+([multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)). Bias
+toward caution over speed; for trivial tasks, use judgment.
+
+1. **Think before coding.** State assumptions explicitly; if uncertain, ask. When multiple
+   interpretations exist, surface them — don't silently pick one. If a simpler approach exists, say
+   so. When something is unclear, stop and name it.
+2. **Simplicity first.** The minimum code that solves the problem, nothing speculative — no
+   unrequested features, no abstractions for single-use code, no error handling for impossible
+   cases. If 200 lines could be 50, rewrite. Ask: "would a senior engineer call this overcomplicated?"
+3. **Surgical changes.** Touch only what the task needs. Don't reformat or "improve" adjacent code,
+   don't refactor what isn't broken, match the existing style. Remove orphans *your* change created;
+   leave pre-existing dead code (mention it, don't delete it). Every changed line should trace to the
+   request.
+4. **Goal-driven execution.** Turn the task into a verifiable goal and loop until it's met — "add
+   validation" becomes "write tests for invalid inputs, then make them pass." For multi-step work,
+   state a brief plan with a verify check per step. (`/tdd` and the **Verify** hook operationalize this.)
+5. **Verify before you hand it over.** Resolve routes, commands, CLI flags, config keys, and env vars
+   from source — route definitions, the tool's own `--help` / list command, config files — never
+   invent them from naming patterns or "what it probably is." If the user will run or click it, check
+   at least one first.
