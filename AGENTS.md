@@ -32,8 +32,12 @@ examples with yours, or delete the section if the generics suffice.
 
 ## Workflow
 
-A design-grill → document (ADR) → test-first → review loop, in two modes. Vocabulary is defined in
+A design-grill → plan → implement (test-first) → review loop. Vocabulary is defined in
 [`CONTEXT.md`](CONTEXT.md); decisions are recorded one-file-per-ADR in [`docs/adr/`](docs/adr/).
+
+Author plans with **`/plan`** — it slices a goal into vertical tracer-bullet criteria and groups the
+independent ones into parallel `### Wave N (parallel)` blocks, writing `plans/NNNN-*.md`. Then drive
+them with the two modes below:
 
 ### Sequential loop — the *control* path (one task per session)
 
